@@ -36,6 +36,27 @@ selected_model_name = st.selectbox(
     list(model_files.keys())
 )
 
+
+# -------------------------------
+# Download Test Dataset Section
+# -------------------------------
+
+st.subheader("Download Sample Test Dataset")
+
+test_file_path = "data/test_data.csv"
+
+if os.path.exists(test_file_path):
+    with open(test_file_path, "rb") as f:
+        st.download_button(
+            label="Download test_data.csv",
+            data=f,
+            file_name="test_data.csv",
+            mime="text/csv"
+        )
+else:
+    st.warning("Sample test_data.csv file not found.")
+
+
 # ------------------------------
 # File upload
 # ------------------------------
