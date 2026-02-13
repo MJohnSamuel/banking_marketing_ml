@@ -53,7 +53,7 @@ numeric_pipeline = Pipeline(steps=[
 
 categorical_pipeline = Pipeline(steps=[
     ("imputer", SimpleImputer(strategy="most_frequent")),
-    ("encoder", OneHotEncoder(handle_unknown="ignore"))
+    ("encoder", OneHotEncoder(handle_unknown="ignore", sparse_output=False))
 ])
 
 preprocessor = ColumnTransformer(
@@ -101,22 +101,14 @@ results = []
 # -------------------------------
 # 6. Training & Evaluation
 # -------------------------------
-def to_dense_if_sparse(x):
-    return x.toarray() if hasattr(x, "toarray") else x
+
 for name, model in models.items():
 
-    # GaussianNB cannot work directly with sparse matrices
-    if name == "Naive Bayes":
-        clf = Pipeline(steps=[
-            ("preprocessor", preprocessor),
-            ("to_dense", FunctionTransformer(to_dense_if_sparse, accept_sparse=True)),
-            ("model", model)
-        ])
-    else:
-        clf = Pipeline(steps=[
-            ("preprocessor", preprocessor),
-            ("model", model)
-        ])
+    clf = Pipeline(steps=[
+        ("preprocessor", preprocessor),
+        ("model", model)
+    ])
+
 
     clf.fit(X_train, y_train)
 
