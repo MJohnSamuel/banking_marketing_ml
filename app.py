@@ -19,6 +19,15 @@ st.set_page_config(page_title="Bank Marketing ML App")
 st.title("Bank Marketing Term Deposit Prediction")
 st.write("Upload test dataset and evaluate selected model.")
 
+st.title("Bank Marketing Model Evaluation App")
+
+# Student Information
+st.markdown("### Student Information")
+st.markdown("**Register Number:** 2025AA05173")
+st.markdown("**Name:** John Samuel M")
+
+
+
 # ------------------------------
 # Model selection
 # ------------------------------
