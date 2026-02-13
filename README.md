@@ -65,22 +65,22 @@ The following six classification models were implemented:
 ## Observations
 
 ### Logistic Regression
-Shows strong recall performance, making it suitable when minimizing false negatives is important. Handles class imbalance effectively.
+Logistic Regression achieved very high recall (0.9116), indicating strong capability in identifying customers who are likely to subscribe. However, precision is moderate, meaning the model predicts many positives, including false positives. Its strong AUC (0.9438) shows effective class separation. Logistic Regression performs well in imbalanced datasets when recall is prioritized.
 
 ### Decision Tree
-Provides reasonable accuracy but may overfit compared to ensemble models.
+Decision Tree achieved high accuracy (0.9144) but relatively lower AUC compared to ensemble models. While it captures non-linear relationships, it is more prone to overfitting. The moderate MCC score indicates reasonable but not optimal balanced classification performance.
 
 ### kNN
-Moderate performance and sensitive to scaling and class imbalance.
+kNN achieved balanced performance but lower recall compared to Logistic Regression. Its performance depends heavily on feature scaling and distance metrics. The moderate AUC and MCC suggest that while kNN works reasonably well, it does not outperform ensemble methods on this dataset.
 
 ### Naive Bayes
-High recall but low precision, indicating many false positives.
+Naive Bayes produced high recall (0.6907) but low precision (0.3495), indicating a high number of false positives. This behavior is expected due to its strong independence assumption among features. Although computationally efficient, its performance is limited when feature dependencies exist.
 
 ### Random Forest
-Strong ensemble performance with high AUC and improved generalization.
+Random Forest demonstrated strong overall performance with high AUC (0.9448) and good MCC (0.5146). As an ensemble method, it reduces overfitting compared to a single Decision Tree. It provides better generalization and more stable predictions across different splits.
 
 ### XGBoost
-Best overall balanced performance with highest AUC and MCC, making it the most reliable model among all six.
+XGBoost achieved the highest AUC (0.9499) and strong MCC (0.5633), indicating the best overall balanced classification performance. It effectively handles non-linear relationships and class imbalance through boosting. Among all models, XGBoost provides the most reliable and consistent results.
 
 ---
 
