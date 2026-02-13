@@ -23,12 +23,12 @@ st.write("Upload test dataset and evaluate selected model.")
 # Model selection
 # ------------------------------
 model_files = {
-    "Logistic Regression": "model/Logistic_Regression.joblib",
-    "Decision Tree": "model/Decision_Tree.joblib",
-    "kNN": "model/kNN.joblib",
-    "Naive Bayes": "model/Naive_Bayes.joblib",
-    "Random Forest": "model/Random_Forest.joblib",
-    "XGBoost": "model/XGBoost.joblib"
+    "Logistic Regression": "model/Logistic_Regression.pkl",
+    "Decision Tree": "model/Decision_Tree.pkl",
+    "kNN": "model/kNN.pkl",
+    "Naive Bayes": "model/Naive_Bayes.pkl",
+    "Random Forest": "model/Random_Forest.pkl",
+    "XGBoost": "model/XGBoost.pkl"
 }
 
 selected_model_name = st.selectbox(

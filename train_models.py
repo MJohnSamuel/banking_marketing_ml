@@ -125,7 +125,7 @@ for name, model in models.items():
         "MCC": matthews_corrcoef(y_test, y_pred)
     })
 
-    joblib.dump(clf, f"model/{name.replace(' ', '_')}.joblib")
+    joblib.dump(clf, f"model/{name.replace(' ', '_')}.pkl")
 
 # -------------------------------
 # 7. Results table
